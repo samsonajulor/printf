@@ -6,7 +6,7 @@
 [IMAGE: PRINTF(1) (https://user-images.githubusercontent.com/97880395/178113082-7681e4c4-4cc0-4d03-b386-b4e50f6c8469.png)]
 .PP
 This README file have the fully description of our first group project
-in holberton-school, the project is about the implementation of printf
+in Alx-school, the project is about the implementation of printf
 function, it means we gonna write our own printf function.
 Below you\[cq]ll find how printf works, and how to design the proper
 formatting specification for any occasion Prototype of printf function
