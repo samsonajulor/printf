@@ -1,151 +1,49 @@
-# Printf
-Our first collaborative project at Holberton School, The printf project       is a Low-Level Programming project writen in C language.
-                                                                              
-## Table of Context                                                           <!-- toc -->
-                                                                              - [Files](#Files)
-- [change log](#change-log)                                                     * [0.0.1 - 2018-19-10](#001---2018-19-10)
-- [Authors](#Authors)
 
-<!-- tocstop -->
-# Files
+![PRINTF(1)](https://user-images.githubusercontent.com/97880395/178113082-7681e4c4-4cc0-4d03-b386-b4e50f6c8469.png)
 
-|          Goto          | Files                                          | De
-scription                                                  |
-| :--------------------: | :--------------------------------------------- | --
----------------------------------------------------------- |
-|      [📌](#printf)      | [printf.c](./printf.c)                         | E
-ntry point for the `printf`.                                |
-|                        | [holberton.h](./holberton.c)                   | He
-ader files for the the whole project.                      |                  |                        | [global_definitions.h](./global-definitions.h) | He
-ader file that defines macro for `NULL`, `True`, and `False`. |
-|      [📌](#opidc)       | [opid.c](./opid.c)                             | Contains the functions for handling the function pointers.   |
-|   [📌](#buffer_intc)    | [buffer_int.c](./buffer_int.c)                 | Contains function to `Allocate` and `free` a `Buffer`.       |
-|   [📌](#buffer_opsc)    | [buffer_ops.c](./buffer_ops.c)                 | Contains functions related to the buffer.                    |
-|   [📌](#buffer_ops2c)   | [buffer_ops2.c](./buffer_ops2.c)               | Contains functions related to the buffer.                    |
-| [📌](#write_op_funcsc)  | [write_op_funcs.c](./write_op_funcs.c)         | Contains functions related to writing out the `Buffer` to `STDOUT`. |
-| [📌](#write_op2_funcsc) | [write_op2_funcs.c](write_op2_funcs.c)         | Contains a function that converts binary into base 10 number. |
 
-## Printf                                                                                                                                                   file: [printf.c](./printf.c)
-
-| Function | Details                                               |
-| -------: | ----------------------------------------------------- |
-|  _printf | prints any string with certain flags for modification |
+This README file have the fully description of our first group project in holberton-school, the project is about the implementation of printf function, it means we gonna write our own printf function. Below you'll find how printf works, and how to design the proper formatting specification for any occasion Prototype of printf function int _printf(const char *format, ...); Returns: the number of characters printed (excluding the null byte used to end output to strings
 
 
 
-[back to files](#Files)
+## Usage && Examples 
+Include main.h Call _printf, passing a formatted string with any format specifiers and optional arguments Upon success, it writes desired output to stdout Upon error, it returns -1 If NULL is passed in as a string argument, it prints (null) Format Specifier.
+
+To use the _printf function you simply need to compile all files .c including the header holberton.h with a main function.
+
+```c
+'#include "main.h"
+
+int main(void) { _printf("let's print hello world!");
+
+return (0); }
+```
+Compilation:
+
+```sh
+$ gcc *.c -o
+```
+Output: 
+```sh
+let's print hello world!
+```
+You can do much more, by combining specifiers like string or integer.
+
+## Files
+Below a list of the used files during project:
+
+- [_printf.c] - produces output according to a format.
+- [get_printf.c] - containing functions for specifiers _putchar.c.
+- [function.c] - containing function that writes a char to stdout.
+- [main.h] - header file with function prototypes and struct for specifiers.
 
 
+## Authors
+**Mahdi Bani** 
++ (https://github.com/Mahdi3Bani)
 
-## opid.c
+**Malek Mayeh** 
++  (https://github.com/malekje)
 
-file: [opid.c](./opid.c)
-
-
-| Function | Details                                  |
-| -------: | ---------------------------------------- |
-|     opid | opid - scans src string for an operator. |
-                                                                              
-                                                                              [back to files](#Files)
-                                                                              ## buffer_int.c                                                                                                                                             file: [buffer_int.c](./buffer_int.c)
-
-
-|   Function | Details                                                      |
-| ---------: | ------------------------------------------------------------ |
-|    buf_new | Function that create a `Buffer` `struct` at a default size of 1024 |
-| buf_custom | Function for create a `Buffer` `struct` with a custom size   |
-|    buf_end | frees `buffer` structure                                     |
-
-
-[back to files](#Files)
-
-## buffer_ops.c
-
-file: [buffer_ops.c](./buffer_ops.c)
-
-
-|    Function | Details                                    |
-| ----------: | ------------------------------------------ |
-|    buf_size | get the size                               |
-|   buf_index | gets the current index of                  |
-| buf_content | creates a copy of the buffer str field     |
-|   buf_write | writes out the `buffer` string to `stdout` |
-|      buf_wr | writes and reset the `buffer` string       |
-
-[back to files](#Files)
-
-
-
-## buffer_ops2.c                                                                                                                                            file: [buffer_ops2.c](./buffer_ops2.c)                                        
-
-| Function | Details                            |
-| -------: | ---------------------------------- |
-|  buf_inc | increment both index and overflow. |                             
-[back to files](#Files)
-
-## buffer_ops.c
-
-file: [buffer_ops.c](./buffer_ops.c)
-
-
-|    Function | Details                                    |
-| ----------: | ------------------------------------------ |                  |    buf_size | get the size                               |
-|   buf_index | gets the current index of                  |
-| buf_content | creates a copy of the buffer str field     |
-|   buf_write | writes out the `buffer` string to `stdout` |
-|      buf_wr | writes and reset the `buffer` string       |
-
-[back to files](#Files)
-                                                                              
-
-## buffer_ops2.c
-
-file: [buffer_ops2.c](./buffer_ops2.c)
-
-
-| Function | Details                            |
-| -------: | ---------------------------------- |
-|  buf_inc | increment both index and overflow. |
-
-[back to files](#Files)
-
-## write_op_funcs.c
-
-file: [write_op_funcs.c](./write_op_funcs.c)
-
-
-|   Function | Details                                      |
-| ---------: | -------------------------------------------- |
-| write_char | write a character to buffer                  |
-|  write_str | writes a string to buffer                    |
-|  write_mod | write a modulus symbol                       |
-|  write_int | write integer to the buffer                  |                 | append_num | Appends a number as an integer to the buffer |
-
-
-
-[back to files](#Files)
-
-## write_op2_funcs.c
-
-file: [write_op2_funcs.c](./write_op2_funcs.c)
-
-
-|  Function | Details                    |
-| --------: | -------------------------- |
-| write_bin | convert a digit to binary. |
-
-
-
-[back to files](#Files)
-
-
-# change log
-
-## 0.0.1 - 2018-19-10
-- add Martin Branch
-- Git flow initialized to this project.
-
-# Authors
-
-- Martin Smith - [Github](http://github.com/Ostoyae) , [Twitter](https://twitter.com/@_Ostoyae)
-- Samie Azad - [Github](https://github.com/sazad44),
+**Med Ali Krifa**
++  (https://github.com/MedAliKrifa)
