@@ -5,9 +5,6 @@
 .PP
 [IMAGE: PRINTF(1) (https://user-images.githubusercontent.com/97880395/178113082-7681e4c4-4cc0-4d03-b386-b4e50f6c8469.png)]
 .PP
-This README file have the fully description of our first group project
-in Alx-school, the project is about the implementation of printf
-function, it means we gonna write our own printf function.
 Below you\[cq]ll find how printf works, and how to design the proper
 formatting specification for any occasion Prototype of printf function
 int _printf(const char *format, \&...); Returns: the number of
@@ -21,7 +18,7 @@ to stdout Upon error, it returns -1 If NULL is passed in as a string
 argument, it prints (null) Format Specifier.
 .PP
 To use the _printf function you simply need to compile all files .c
-including the header holberton.h with a main function.
+including the header main.h with a main function.
 .IP
 .nf
 \f[C]
