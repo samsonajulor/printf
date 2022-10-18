@@ -18,7 +18,6 @@ typedef struct print
 	int (*f)(va_list);
 } print_t;
 
-int _putchar(char c);
 int _printf(const char *format, ...);
 int get_printf(const char c, va_list ap);
 
