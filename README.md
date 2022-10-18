@@ -2,14 +2,14 @@
 ![PRINTF(1)](https://user-images.githubusercontent.com/97880395/178113082-7681e4c4-4cc0-4d03-b386-b4e50f6c8469.png)
 
 
-This README file have the fully description of our first group project in holberton-school, the project is about the implementation of printf function, it means we gonna write our own printf function. Below you'll find how printf works, and how to design the proper formatting specification for any occasion Prototype of printf function int _printf(const char *format, ...); Returns: the number of characters printed (excluding the null byte used to end output to strings
+This README file have the fully description of our first group project in Alx-school, the project is about the implementation of printf function, it means we gonna write our own printf function. Below you'll find how printf works, and how to design the proper formatting specification for any occasion Prototype of printf function int _printf(const char *format, ...); Returns: the number of characters printed (excluding the null byte used to end output to strings
 
 
 
 ## Usage && Examples 
 Include main.h Call _printf, passing a formatted string with any format specifiers and optional arguments Upon success, it writes desired output to stdout Upon error, it returns -1 If NULL is passed in as a string argument, it prints (null) Format Specifier.
 
-To use the _printf function you simply need to compile all files .c including the header holberton.h with a main function.
+To use the _printf function you simply need to compile all files .c including the header main.h with a main function.
 
 ```c
 '#include "main.h"
@@ -39,11 +39,8 @@ Below a list of the used files during project:
 
 
 ## Authors
-**Mahdi Bani** 
-+ (https://github.com/Mahdi3Bani)
+**Samson Ajulor** 
++ (https://github.com/samsonajulor)
 
-**Malek Mayeh** 
-+  (https://github.com/malekje)
-
-**Med Ali Krifa**
-+  (https://github.com/MedAliKrifa)
+**Onifade Olatunde** 
++  (https://github.com/holatunde)
