@@ -1,48 +1,50 @@
-#include "main.h"
+#include "holberton.h"
+
 /**
- * _printf - a typical printf
- * @format: is a character string
- * Return: the number of characters printed
+ * _printf - a function that produces output according to a format
+ *
+ * @format: a pointer to the format string
+ *
+ * Return: on success, returns the number of characters printed
  */
 int _printf(const char *format, ...)
 {
-
-	int i = 0, j = 0, a = 0;
+	int sum = 0;
 	va_list ap;
+	char *p, *start;
+	params_t params = PARAMS_INIT;
 
-	if (format == NULL || (strlen(format) == 1 && format[0] == '%'))
-	{
-		return (-1);
-	}
 	va_start(ap, format);
-	while (format && format[i])
+
+	if (!format || (format[0] == '%' && !format[1]))
+		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
+	for (p = (char *)format; *p; p++)
 	{
-		if (format[i] != '%')
+		init_params(&params, ap);
+		if (*p != '%')
 		{
-			putchar(format[i]);
-			j++;
-		}
-		if (format[i] == '%' && format[i + 1] != 'K' && format[i + 1] != '!')
-		{
-			a = get_printf(*(format + (i + 1)), ap);
-			if (a != 0)
-				j = j + a;
-			i = i + 2;
+			sum += _putchar(*p);
 			continue;
-			if (*(format + (i + 1)) == '\0')
-			{
-				putchar(format[i]);
-				j++;
-			}
 		}
-		else if ((format[i] == '%' && format[i + 1] == 'K') ||
-		 (format[i] == '%' && format[i + 1] == '!'))
+		start = p;
+		p++;
+		while (get_flag(p, &params)) /* while char at p is flag char */
 		{
-			putchar(format[i]);
-			j++;
+			p++; /* next char */
 		}
-		i++;
+		p = get_width(p, &params, ap);
+		p = get_precision(p, &params, ap);
+		if (get_modifier(p, &params))
+			p++;
+		if (!get_specifier(p))
+			sum += print_from_to(start, p,
+					params.l_modifier || params.h_modifier ? p - 1 : 0);
+		else
+			sum += get_print_func(p, ap, &params);
 	}
+	_putchar(BUF_FLUSH);
 	va_end(ap);
-	return (j);
+	return (sum);
 }
